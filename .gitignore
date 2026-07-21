@@ -5,6 +5,9 @@ node_modules/
 frontend/build/
 frontend/.env
 backend/.env
+frontend/.env.local
+backend/.env.local
+*.env.local
 
 # Python (backend_nlp) artifacts
 __pycache__/
