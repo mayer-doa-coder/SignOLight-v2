@@ -2,7 +2,7 @@
 
 > **Build with Gemma 4 Hackathon** · Inclusive Education Tool for Deaf & Hard-of-Hearing Students in Bangladesh
 
-SignLearn lets you paste any YouTube educational video URL and watch it **side-by-side with a real-time 3D sign language avatar** that synchronizes with the video's captions. **Google's Gemma 4** is the only LLM powering the app — it converts captions into ASL gloss notation, simplifies lecture language, and generates plain-language definitions for concepts the avatar can't sign.
+ you paste any YouTube educational video URL and watch it **side-by-side with a real-time 3D sign language avatar** that synchronizes with the video's captions. **Google's Gemma 4** is the only LLM powering the app — it converts captions into ASL gloss notation, simplifies lecture language, and generates plain-language definitions for concepts the avatar can't sign.
 
 ---
 
