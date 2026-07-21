@@ -1,4 +1,4 @@
-# 🤟 SignLearn (SignOLight) — AI Sign Language Video Player
+# 🤟 SignLearn (SignOLight2) — AI Sign Language Video Player
 
 > **Build with Gemma 4 Hackathon** · Inclusive Education Tool for Deaf & Hard-of-Hearing Students in Bangladesh
 
