@@ -1,0 +1,246 @@
+/* Player Page */
+.player-page {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Header */
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-accent);
+}
+
+.player-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.title-icon {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  flex-shrink: 0;
+}
+
+.video-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-author {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Status bars */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.status-bar.ready {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  justify-content: space-between;
+}
+
+.status-bar.loading {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.status-bar.error {
+  background: rgba(255, 107, 107, 0.06);
+  border-bottom: 1px solid rgba(255, 107, 107, 0.16);
+  color: var(--accent-pink);
+}
+
+.status-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--text-primary);
+  border-radius: 50%;
+  animation: spin-slow 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.process-btn {
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  background: var(--text-primary);
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.process-btn:hover {
+  opacity: 0.85;
+}
+
+.process-btn.error-retry {
+  border-color: rgba(255, 107, 107, 0.5);
+  background: transparent;
+  color: var(--accent-pink);
+}
+
+/* Main content */
+.player-main {
+  flex: 1;
+  display: grid;
+  gap: 0;
+  min-height: 0;
+  position: relative;
+}
+
+/* Side by side layout */
+.player-main.layout-side-by-side {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Full sign layout */
+.player-main.layout-fullscreen-sign {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* PiP layout */
+.player-main.layout-picture-in-picture {
+  grid-template-columns: 1fr;
+}
+
+/* Video panel */
+.video-panel {
+  position: relative;
+  background: #000;
+  border-right: 1px solid var(--border);
+  min-height: 400px;
+}
+
+/* Sign panel */
+.sign-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.mixamo-sign-panel {
+  min-height: 560px;
+}
+
+.sign-panel.pip {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 340px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-accent);
+  box-shadow: var(--shadow-card);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sign-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.sign-badge {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .player-main.layout-side-by-side,
+  .player-main.layout-fullscreen-sign {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(140px, 38%) minmax(0, 62%);
+    overflow: hidden;
+  }
+
+  .video-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    min-height: 0;
+  }
+
+  .sign-panel {
+    min-height: 0;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .mixamo-sign-panel {
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .player-header {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  .video-title { font-size: 13px; }
+}
